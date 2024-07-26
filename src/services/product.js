@@ -10,4 +10,9 @@ export default class ProductService {
     const response = await axios.get(`/products/?category__id=${category_id}`);
     return response.data.results;
   }
+
+  async createProduct(product) {
+    const response = await axios.post('/products/', product);
+    return response.data;
+  }
 }

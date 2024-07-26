@@ -15,5 +15,10 @@ export const useProductStore = defineStore('product', () => {
     products.value = await productService.getProductByCategory(category_id);
   }
 
-  return { products, getProducts, getProductsByCategory };
+  async function createProduct(product) {
+    await productService.createProduct(product);
+    getProducts();
+  }
+
+  return { products, createProduct, getProducts, getProductsByCategory };
 });
