@@ -1,4 +1,9 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const showMenu = ref(false)
+
+</script>
 <template>
   <div id="footerMenu" :style="{ display: showMenu ? 'block' : 'none' }">
     <RouterLink to="/">
@@ -9,6 +14,18 @@
       <i class="mdi mdi-account" />
       Login
     </RouterLink>
+    <router-link to="/acessorios">
+      Acessorios
+    </router-link>
+    <router-link to="/marcas">
+      Marcas
+    </router-link>
+    <router-link to="/cores">
+      Cores
+    </router-link>
+    <router-link to="/categorias">
+      Categorias
+    </router-link>
   </div>
   <div class="icons">
     <RouterLink to="/">
@@ -70,5 +87,9 @@
   color: #282828;
   font-size: 1rem;
   transition: color 0.3s;
+}
+
+.hamburger {
+  color: #282828
 }
 </style>
